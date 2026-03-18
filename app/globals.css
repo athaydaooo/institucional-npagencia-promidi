@@ -147,3 +147,33 @@
 .font-heading {
   font-family: var(--font-heading);
 }
+
+/* Promidi Theme */
+.theme-promidi {
+  --background: #FFFFFF;
+  --foreground: #1F2937;
+  --card: #F3F4F6;
+  --card-foreground: #1F2937;
+  --popover: #FFFFFF;
+  --popover-foreground: #1F2937;
+  --primary: #f8921f;
+  --primary-foreground: #FFFFFF;
+  --secondary: #102b6e;
+  --secondary-foreground: #FFFFFF;
+  --muted: #F8F9FA;
+  --muted-foreground: #6B7280;
+  --accent: #f8921f;
+  --accent-foreground: #FFFFFF;
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+  --ring: #f8921f;
+  --radius: 0.75rem;
+}
+
+.theme-promidi .font-heading {
+  font-family: var(--font-poppins), 'Poppins', system-ui, sans-serif;
+}
+
+.theme-promidi {
+  font-family: var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
+}

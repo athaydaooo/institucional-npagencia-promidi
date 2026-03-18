@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { Montserrat, Inter } from 'next/font/google'
+import { Montserrat, Inter, Poppins, DM_Sans } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
@@ -12,6 +12,19 @@ const montserrat = Montserrat({
 const inter = Inter({ 
   subsets: ["latin"],
   variable: '--font-inter',
+  display: 'swap',
+})
+
+const poppins = Poppins({ 
+  subsets: ["latin"],
+  variable: '--font-poppins',
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+})
+
+const dmSans = DM_Sans({ 
+  subsets: ["latin"],
+  variable: '--font-dm-sans',
   display: 'swap',
 })
 
@@ -49,7 +62,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className="scroll-smooth">
-      <body className={`${montserrat.variable} ${inter.variable} font-sans antialiased bg-background text-foreground`}>
+      <body className={`${montserrat.variable} ${inter.variable} ${poppins.variable} ${dmSans.variable} font-sans antialiased`}>
         {children}
         <Analytics />
       </body>
