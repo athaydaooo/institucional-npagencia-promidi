@@ -5,6 +5,7 @@ import { useInView } from "framer-motion"
 import { useRef } from "react"
 import { MessageCircle, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export function CTAFooter() {
   const ref = useRef(null)
@@ -88,6 +89,14 @@ export function CTAFooter() {
             <p className="text-sm text-muted-foreground">
               © 2026 NP Agência. Todos os direitos reservados.
             </p>
+
+            {/* Partner Link */}
+            <Link 
+              href="/promidi"
+              className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+            >
+              Conheça a Promidi
+            </Link>
           </div>
         </div>
       </footer>
