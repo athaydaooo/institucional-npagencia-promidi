@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
 import { Users, Target, TrendingUp } from "lucide-react"
+import Image from "next/image"
 
 export function About() {
   const ref = useRef(null)
@@ -82,7 +83,13 @@ export function About() {
                 <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                   <Users className="w-12 h-12 text-primary/50" />
                 </div>
-                <span className="text-sm">Imagem da equipe</span>
+                <Image
+                  src="/np-agencia/teampic.jpg"
+                  alt="Sobre Nós"
+                  width={400}
+                  height={500}
+                  className="w-full h-auto object-cover opacity-50"
+                />
               </div>
               {/* Decorative Elements */}
               <div className="absolute top-4 right-4 w-20 h-20 border border-primary/20 rounded-sm" />

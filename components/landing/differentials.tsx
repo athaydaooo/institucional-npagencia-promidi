@@ -35,7 +35,7 @@ export function Differentials() {
   return (
     <section id="diferenciais" className="py-24 lg:py-32 bg-background relative overflow-hidden">
       {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
       
       <div className="container mx-auto px-4 lg:px-8" ref={ref}>
         {/* Section Header */}
@@ -65,18 +65,18 @@ export function Differentials() {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group"
+              className="group h-full"
             >
-              <div className="flex gap-5 p-6 lg:p-8 bg-card border border-border rounded-sm transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
+              <div className="h-full flex gap-5 p-6 lg:p-8 bg-card border border-border rounded-sm transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
                 {/* Check Icon */}
-                <div className="flex-shrink-0">
+                <div className="shrink-0">
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
                     <CheckCircle2 className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors" />
                   </div>
                 </div>
                 
                 {/* Content */}
-                <div>
+                <div className="flex-1">
                   <div className="flex items-center gap-3 mb-3">
                     <item.icon className="w-5 h-5 text-primary" />
                     <h3 

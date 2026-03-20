@@ -33,21 +33,9 @@ export const metadata: Metadata = {
   description: 'Somos uma agência 360º especializada em conectar marcas e pessoas através de inteligência estratégica e experiências memoráveis.',
   generator: 'v0.app',
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/np-agencia/logo.png',
+    shortcut: '/np-agencia/logo.png',
+    apple: '/np-agencia/logo.png',
   },
 }
 

@@ -15,7 +15,7 @@ export default function PromidiPage() {
   return (
     <div className="theme-promidi min-h-screen bg-white text-[#1F2937]">
       <PromidiHeader />
-      <main>
+      <main >
         <PromidiHero />
         <PromidiAbout />
         <PromidiServices />
