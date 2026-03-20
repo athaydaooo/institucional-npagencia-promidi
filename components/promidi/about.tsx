@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
 import { Target, Users, Zap } from "lucide-react"
+import Image from "next/image"
 
 export function PromidiAbout() {
   const ref = useRef(null)
@@ -38,15 +39,14 @@ export function PromidiAbout() {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="aspect-[4/3] rounded-3xl bg-gradient-to-br from-[#F3F4F6] to-[#E5E7EB] overflow-hidden">
-              <div className="w-full h-full flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-20 h-20 mx-auto mb-4 rounded-2xl bg-[#102b6e]/10 flex items-center justify-center">
-                    <Users size={40} className="text-[#102b6e]" />
-                  </div>
-                  <p className="text-[#6B7280]">Equipe em ação</p>
-                </div>
-              </div>
+            <div className="relative aspect-4/3 rounded-3xl overflow-hidden">
+              <Image
+                src="/promidi/team_in_action.jpeg"
+                alt="Time Promidi em ação"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
             </div>
 
             {/* Accent Shape */}

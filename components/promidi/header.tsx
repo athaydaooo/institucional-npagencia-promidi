@@ -37,7 +37,7 @@ export function PromidiHeader() {
           {/* Logo */}
           <Link href="/promidi" className="inline-flex items-center h-12 md:h-16">
             <Image
-              src="/promidi-logo.png"
+              src="/promidi/logo.png"
               alt="Promidi"
               width={480}
               height={132} // proporção correta

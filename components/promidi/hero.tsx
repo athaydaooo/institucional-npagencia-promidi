@@ -2,10 +2,11 @@
 
 import { motion } from "framer-motion"
 import { ArrowRight, Play } from "lucide-react"
+import Image from "next/image"
 
 export function PromidiHero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-white via-[#F8F9FA] to-white">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-linear-to-br from-white via-[#F8F9FA] to-white">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-20 right-20 w-72 h-72 bg-[#f8921f]/10 rounded-full blur-3xl" />
@@ -80,16 +81,17 @@ export function PromidiHero() {
             className="hidden lg:block"
           >
             <div className="relative">
-              {/* Main Image Placeholder */}
-              <div className="aspect-square max-w-lg mx-auto rounded-3xl bg-gradient-to-br from-[#102b6e] to-[#1a3d8f] overflow-hidden shadow-2xl">
-                <div className="w-full h-full flex items-center justify-center p-12">
-                  <div className="text-center text-white">
-                    <div className="w-24 h-24 mx-auto mb-6 rounded-2xl bg-white/10 flex items-center justify-center">
-                      <Play size={40} className="text-[#f8921f]" />
-                    </div>
-                    <p className="text-white/80 font-medium">Evento ao vivo</p>
-                  </div>
-                </div>
+              {/* Main Hero Image */}
+              <div className="relative aspect-square max-w-lg mx-auto rounded-3xl overflow-hidden shadow-2xl">
+                <Image
+                  src="/promidi/team_hero.jpeg"
+                  alt="Time Promidi no hero"
+                  fill
+                  priority
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 0vw, 42vw"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-[#102b6e]/35 via-transparent to-transparent" />
               </div>
 
               {/* Floating Cards */}
