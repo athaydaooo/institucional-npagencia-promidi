@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next'
+import { headers } from 'next/headers'
 import { Montserrat, Inter, Poppins, DM_Sans } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
@@ -28,15 +29,32 @@ const dmSans = DM_Sans({
   display: 'swap',
 })
 
-export const metadata: Metadata = {
-  title: 'NP Agência | Estratégia, Criatividade e Conexão',
-  description: 'Somos uma agência 360º especializada em conectar marcas e pessoas através de inteligência estratégica e experiências memoráveis.',
-  generator: 'v0.app',
-  icons: {
-    icon: '/np-agencia/logo.png',
-    shortcut: '/np-agencia/logo.png',
-    apple: '/np-agencia/logo.png',
-  },
+export async function generateMetadata(): Promise<Metadata> {
+  const requestHeaders = await headers()
+  const currentHost = (requestHeaders.get('x-current-host') || requestHeaders.get('host') || '').split(':')[0]
+
+  const isPromidiHost = currentHost.includes('promidi.com.br');
+
+  const isNpAgenciaHost = currentHost.includes('npagencia.info');
+
+  const isPromidiPath = (requestHeaders.get('x-current-path') || '').startsWith('/promidi');
+
+  const hasHost = isPromidiHost || isNpAgenciaHost;
+
+  const faviconPath = hasHost ? 
+    (isPromidiHost ? '/promidi/logo.png' : '/np-agencia/logo.png') :
+    (isPromidiPath ? '/promidi/logo.png' : '/np-agencia/logo.png');
+
+  return {
+    title: 'NP Agência | Estratégia, Criatividade e Conexão',
+    description: 'Somos uma agência 360º especializada em conectar marcas e pessoas através de inteligência estratégica e experiências memoráveis.',
+    generator: 'v0.app',
+    icons: {
+      icon: faviconPath,
+      shortcut: faviconPath,
+      apple: faviconPath,
+    },
+  }
 }
 
 export const viewport: Viewport = {
