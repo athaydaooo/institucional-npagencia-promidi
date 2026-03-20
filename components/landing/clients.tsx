@@ -3,19 +3,18 @@
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
-import { Building2, Image as ImageIcon } from "lucide-react"
+import { Building2 } from "lucide-react"
+import Image from "next/image"
 
 const clients = [
   "Jeep", "FIAT", "CARAS", "Seara", "Aviva", "Hot Park", "Fogo de Chão", "RAM"
 ]
 
 const teamPhotos = [
-  { aspect: "aspect-[4/3]", size: "col-span-2 row-span-1" },
-  { aspect: "aspect-square", size: "col-span-1 row-span-1" },
-  { aspect: "aspect-[3/4]", size: "col-span-1 row-span-2" },
-  { aspect: "aspect-[4/3]", size: "col-span-2 row-span-1" },
-  { aspect: "aspect-square", size: "col-span-1 row-span-1" },
-  { aspect: "aspect-[4/3]", size: "col-span-1 row-span-1" },
+  { src: "/np-agencia/team1.jpeg", alt: "Time NP em ação 1", size: "col-span-1 md:col-span-1 row-span-2" },
+  { src: "/np-agencia/team2.jpeg", alt: "Time NP em ação 2", size: "col-span-1 md:col-span-1 row-span-2" },
+  { src: "/np-agencia/team3.jpg", alt: "Time NP em ação 3", size: "col-span-1 md:col-span-1 row-span-2" },
+  { src: "/np-agencia/team5.jpg", alt: "Time NP em ação 5", size: "col-span-1 md:col-span-1 row-span-2" },
 ]
 
 export function Clients() {
@@ -56,15 +55,15 @@ export function Clients() {
         >
           <div className="relative">
             {/* Gradient Overlays */}
-            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-secondary/30 to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-secondary/30 to-transparent z-10 pointer-events-none" />
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-linear-to-r from-secondary/30 to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-linear-to-l from-secondary/30 to-transparent z-10 pointer-events-none" />
             
             {/* Marquee Track */}
             <div className="flex animate-marquee">
               {[...clients, ...clients, ...clients].map((client, index) => (
                 <div
                   key={`${client}-${index}`}
-                  className="flex-shrink-0 mx-8 px-8 py-6 bg-card border border-border rounded-sm flex items-center justify-center min-w-[180px] hover:border-primary/50 transition-colors"
+                  className="shrink-0 mx-8 px-8 py-6 bg-card border border-border rounded-sm flex items-center justify-center min-w-45 hover:border-primary/50 transition-colors"
                 >
                   <div className="flex items-center gap-3">
                     <Building2 className="w-6 h-6 text-primary/50" />
@@ -100,9 +99,14 @@ export function Clients() {
                 transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
                 className={`${photo.size} bg-card border border-border rounded-sm overflow-hidden hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 group`}
               >
-                <div className="w-full h-full bg-gradient-to-br from-secondary via-secondary/80 to-secondary/50 flex flex-col items-center justify-center text-muted-foreground/40 group-hover:text-muted-foreground/60 transition-colors">
-                  <ImageIcon className="w-10 h-10 mb-2" />
-                  <span className="text-xs">Foto do time</span>
+                <div className="relative w-full h-full">
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                  />
                 </div>
               </motion.div>
             ))}

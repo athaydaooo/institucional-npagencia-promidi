@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Menu, X, MessageCircle } from "lucide-react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
 const navLinks = [
@@ -38,11 +39,15 @@ export function Header() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
-            <span className="text-2xl font-bold tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
-              <span className="text-primary">NP</span>
-              <span className="text-foreground"> Agência</span>
-            </span>
+          <a href="#" className="flex items-center">
+            <Image
+              src="/np-agencia/logo.png"
+              alt="NP Agência"
+              width={156}
+              height={40}
+              className="h-8 lg:h-10 w-auto"
+              priority
+            />
           </a>
 
           {/* Desktop Navigation */}

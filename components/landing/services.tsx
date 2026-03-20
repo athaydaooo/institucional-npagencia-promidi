@@ -89,13 +89,6 @@ export function Services() {
                 <p className="text-muted-foreground leading-relaxed">
                   {service.description}
                 </p>
-
-                {/* Decorative Line */}
-                <div className="mt-6 pt-6 border-t border-border">
-                  <span className="text-sm text-primary font-medium group-hover:underline cursor-pointer">
-                    Saiba mais →
-                  </span>
-                </div>
               </div>
             </motion.div>
           ))}

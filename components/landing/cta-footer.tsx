@@ -5,7 +5,7 @@ import { useInView } from "framer-motion"
 import { useRef } from "react"
 import { MessageCircle, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import Link from "next/link"
+import Image from "next/image"
 
 export function CTAFooter() {
   const ref = useRef(null)
@@ -16,7 +16,7 @@ export function CTAFooter() {
       {/* CTA Section */}
       <section className="py-24 lg:py-32 relative overflow-hidden" ref={ref}>
         {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-primary/80" />
+        <div className="absolute inset-0 bg-linear-to-br from-primary via-primary/90 to-primary/80" />
         <div 
           className="absolute inset-0 opacity-10"
           style={{
@@ -64,7 +64,7 @@ export function CTAFooter() {
                   className="flex items-center gap-3"
                 >
                   <MessageCircle className="w-6 h-6" />
-                  Falar com Lorena de Sa
+                  Fale com nosso time!
                   <ArrowRight className="w-5 h-5" />
                 </a>
               </Button>
@@ -78,25 +78,20 @@ export function CTAFooter() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             {/* Logo */}
-            <a href="#" className="flex items-center gap-2">
-              <span className="text-xl font-bold tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
-                <span className="text-primary">NP</span>
-                <span className="text-foreground"> Agência</span>
-              </span>
+            <a href="#" className="flex items-center">
+              <Image
+                src="/np-agencia/logo.png"
+                alt="NP Agência"
+                width={124}
+                height={32}
+                className="h-7 w-auto"
+              />
             </a>
             
             {/* Copyright */}
             <p className="text-sm text-muted-foreground">
               © 2026 NP Agência. Todos os direitos reservados.
             </p>
-
-            {/* Partner Link */}
-            <Link 
-              href="/promidi"
-              className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
-            >
-              Conheça a Promidi
-            </Link>
           </div>
         </div>
       </footer>

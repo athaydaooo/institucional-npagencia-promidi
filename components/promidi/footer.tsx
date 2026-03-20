@@ -5,6 +5,7 @@ import { useInView } from "framer-motion"
 import { useRef } from "react"
 import { ArrowRight, MessageCircle } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export function PromidiFooter() {
   const ref = useRef(null)
@@ -13,7 +14,7 @@ export function PromidiFooter() {
   return (
     <footer ref={ref}>
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-[#f8921f] to-[#e07f10] relative overflow-hidden">
+      <section className="py-24 bg-linear-to-br from-[#f8921f] to-[#e07f10] relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
@@ -57,27 +58,20 @@ export function PromidiFooter() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             {/* Logo */}
-            <Link href="/promidi" className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">P</span>
-              </div>
-              <span className="font-heading text-lg font-bold text-white">
-                Promidi
-              </span>
+            <Link href="/promidi" className="inline-flex items-center h-9 md:h-10">
+              <Image
+                src="/promidi/logo.png"
+                alt="Promidi"
+                width={480}
+                height={132}
+                className="h-full w-auto"
+              />
             </Link>
 
             {/* Copyright */}
             <p className="text-white/60 text-sm">
               &copy; Promidi 2026. Todos os direitos reservados.
             </p>
-
-            {/* Partner Link */}
-            <Link 
-              href="/"
-              className="text-white/60 text-sm hover:text-white transition-colors duration-200"
-            >
-              Uma empresa do grupo NP Agência
-            </Link>
           </div>
         </div>
       </div>
