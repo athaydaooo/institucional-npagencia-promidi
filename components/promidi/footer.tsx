@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
-import { ArrowRight, MessageCircle, Instagram } from "lucide-react"
+import { ArrowRight, MessageCircle, Instagram, Mail } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -49,6 +49,17 @@ export function PromidiFooter() {
               Falar com o Comercial
               <ArrowRight size={20} />
             </motion.a>
+
+            <motion.a
+              href="mailto:comercial@promidi.com.br"
+              aria-label="E-mail comercial da Promidi"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="mt-4 inline-flex items-center gap-2 rounded-full border border-white/40 px-5 py-2.5 text-sm font-medium text-white/95 hover:text-white hover:border-white/70 transition-colors duration-200"
+            >
+              <Mail size={16} />
+              comercial@promidi.com.br
+            </motion.a>
           </motion.div>
         </div>
       </section>
@@ -73,16 +84,26 @@ export function PromidiFooter() {
               &copy; Promidi 2026. Todos os direitos reservados.
             </p>
 
-            <a
-              href="https://www.instagram.com/promidi.midias/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram da Promidi"
-              className="inline-flex items-center gap-2 text-white/60 text-sm hover:text-white transition-colors duration-200"
-            >
-              <Instagram size={16} />
-              @promidi.midias
-            </a>
+            <div className="flex items-center gap-4">
+              <a
+                href="https://www.instagram.com/promidi.midias/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram da Promidi"
+                className="inline-flex items-center gap-2 text-white/60 text-sm hover:text-white transition-colors duration-200"
+              >
+                <Instagram size={16} />
+                @promidi.midias
+              </a>
+              <a
+                href="mailto:comercial@promidi.com.br"
+                aria-label="E-mail comercial da Promidi"
+                className="inline-flex items-center gap-2 text-white/60 text-sm hover:text-white transition-colors duration-200"
+              >
+                <Mail size={16} />
+                comercial@promidi.com.br
+              </a>
+            </div>
           </div>
         </div>
       </div>

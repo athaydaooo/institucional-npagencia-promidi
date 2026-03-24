@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
-import { MessageCircle, ArrowRight, Instagram } from "lucide-react"
+import { MessageCircle, ArrowRight, Instagram, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
@@ -69,6 +69,18 @@ export function CTAFooter() {
                 </a>
               </Button>
             </motion.div>
+
+            <motion.a
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.45 }}
+              href="mailto:comercial@npagencia.info"
+              aria-label="E-mail comercial da NP Agência"
+              className="mt-4 inline-flex items-center gap-2 rounded-full border border-primary-foreground/40 px-5 py-2.5 text-sm font-medium text-primary-foreground/95 hover:text-primary-foreground hover:border-primary-foreground/60 transition-colors duration-200"
+            >
+              <Mail className="w-4 h-4" />
+              comercial@npagencia.info
+            </motion.a>
           </motion.div>
         </div>
       </section>
@@ -93,16 +105,26 @@ export function CTAFooter() {
               © 2026 NP Agência. Todos os direitos reservados.
             </p>
 
-            <a
-              href="https://www.instagram.com/np.agencia/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram da NP Agência"
-              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
-            >
-              <Instagram className="w-4 h-4" />
-              @np.agencia
-            </a>
+            <div className="flex items-center gap-4">
+              <a
+                href="https://www.instagram.com/np.agencia/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram da NP Agência"
+                className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+              >
+                <Instagram className="w-4 h-4" />
+                @np.agencia
+              </a>
+              <a
+                href="mailto:comercial@npagencia.info"
+                aria-label="E-mail comercial da NP Agência"
+                className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+              >
+                <Mail className="w-4 h-4" />
+                comercial@npagencia.info
+              </a>
+            </div>
           </div>
         </div>
       </footer>

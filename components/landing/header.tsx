@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { Menu, X, MessageCircle, Instagram } from "lucide-react"
+import { Menu, X, MessageCircle, Instagram, Mail } from "lucide-react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
@@ -74,6 +74,13 @@ export function Header() {
             >
               <Instagram className="w-5 h-5" />
             </a>
+            <a
+              href="mailto:comercial@npagencia.info"
+              aria-label="E-mail comercial da NP Agência"
+              className="text-muted-foreground hover:text-primary transition-colors duration-200"
+            >
+              <Mail className="w-5 h-5" />
+            </a>
             <Button
               asChild
               size="sm"
@@ -120,6 +127,24 @@ export function Header() {
                   {link.label}
                 </a>
               ))}
+              <div className="px-4 pt-2 flex items-center gap-4">
+                <a
+                  href="https://www.instagram.com/np.agencia/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram da NP Agência"
+                  className="text-muted-foreground hover:text-primary transition-colors duration-200"
+                >
+                  <Instagram className="w-5 h-5" />
+                </a>
+                <a
+                  href="mailto:comercial@npagencia.info"
+                  aria-label="E-mail comercial da NP Agência"
+                  className="text-muted-foreground hover:text-primary transition-colors duration-200"
+                >
+                  <Mail className="w-5 h-5" />
+                </a>
+              </div>
               <div className="px-4 pt-4">
                 <Button
                   asChild
