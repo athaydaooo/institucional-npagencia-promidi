@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowRight, Play } from "lucide-react"
+import { ArrowRight, Play, Instagram } from "lucide-react"
 import Image from "next/image"
 
 export function PromidiHero() {
@@ -71,6 +71,20 @@ export function PromidiHero() {
                 Ver Serviços
               </a>
             </div>
+
+            <motion.a
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+              href="https://www.instagram.com/promidi.midias/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram da Promidi"
+              className="hidden md:inline-flex mt-5 items-center gap-2 text-sm text-[#6B7280] hover:text-[#f8921f] transition-colors duration-200"
+            >
+              <Instagram size={16} />
+              Siga no Instagram
+            </motion.a>
           </motion.div>
 
           {/* Image/Illustration */}

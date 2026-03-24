@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Instagram, Mail } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -61,7 +61,25 @@ export function PromidiHeader() {
           </div>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
+          <div className="hidden md:flex items-center gap-4">
+            <a
+              href="https://www.instagram.com/promidi.midias/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram da Promidi"
+              className="text-[#102b6e] hover:text-[#f8921f] transition-colors duration-200"
+            >
+              <Instagram size={20} />
+            </a>
+
+            <a
+              href="mailto:comercial@promidi.com.br"
+              aria-label="E-mail comercial da Promidi"
+              className="text-[#102b6e] hover:text-[#f8921f] transition-colors duration-200"
+            >
+              <Mail size={20} />
+            </a>
+
             <a
               href="https://wa.me/5511999999999"
               target="_blank"
@@ -103,6 +121,24 @@ export function PromidiHeader() {
                   {link.label}
                 </a>
               ))}
+              <div className="flex items-center gap-4 pt-2">
+                <a
+                  href="https://www.instagram.com/promidi.midias/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram da Promidi"
+                  className="text-[#102b6e] hover:text-[#f8921f] transition-colors duration-200"
+                >
+                  <Instagram size={20} />
+                </a>
+                <a
+                  href="mailto:comercial@promidi.com.br"
+                  aria-label="E-mail comercial da Promidi"
+                  className="text-[#102b6e] hover:text-[#f8921f] transition-colors duration-200"
+                >
+                  <Mail size={20} />
+                </a>
+              </div>
               <a
                 href="https://wa.me/5511999999999"
                 target="_blank"
