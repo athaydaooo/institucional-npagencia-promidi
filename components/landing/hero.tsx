@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowRight, Play } from "lucide-react"
+import { ArrowRight, Play, Instagram } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function Hero() {
@@ -89,6 +89,20 @@ export function Hero() {
               Ver showreel
             </Button>
           </motion.div>
+
+          <motion.a
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            href="https://www.instagram.com/np.agencia/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram da NP Agência"
+            className="hidden lg:inline-flex mt-5 items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+          >
+            <Instagram className="w-4 h-4" />
+            Siga no Instagram
+          </motion.a>
         </div>
       </div>
 

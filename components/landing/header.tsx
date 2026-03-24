@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { Menu, X, MessageCircle } from "lucide-react"
+import { Menu, X, MessageCircle, Instagram } from "lucide-react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
@@ -64,7 +64,16 @@ export function Header() {
           </nav>
 
           {/* CTA Button */}
-          <div className="hidden lg:block">
+          <div className="hidden lg:flex items-center gap-4">
+            <a
+              href="https://www.instagram.com/np.agencia/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram da NP Agência"
+              className="text-muted-foreground hover:text-primary transition-colors duration-200"
+            >
+              <Instagram className="w-5 h-5" />
+            </a>
             <Button
               asChild
               size="sm"

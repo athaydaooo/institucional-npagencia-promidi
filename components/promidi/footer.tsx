@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
-import { ArrowRight, MessageCircle } from "lucide-react"
+import { ArrowRight, MessageCircle, Instagram } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -72,6 +72,17 @@ export function PromidiFooter() {
             <p className="text-white/60 text-sm">
               &copy; Promidi 2026. Todos os direitos reservados.
             </p>
+
+            <a
+              href="https://www.instagram.com/promidi.midias/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram da Promidi"
+              className="inline-flex items-center gap-2 text-white/60 text-sm hover:text-white transition-colors duration-200"
+            >
+              <Instagram size={16} />
+              @promidi.midias
+            </a>
           </div>
         </div>
       </div>

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
-import { MessageCircle, ArrowRight } from "lucide-react"
+import { MessageCircle, ArrowRight, Instagram } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
@@ -92,6 +92,17 @@ export function CTAFooter() {
             <p className="text-sm text-muted-foreground">
               © 2026 NP Agência. Todos os direitos reservados.
             </p>
+
+            <a
+              href="https://www.instagram.com/np.agencia/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram da NP Agência"
+              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+            >
+              <Instagram className="w-4 h-4" />
+              @np.agencia
+            </a>
           </div>
         </div>
       </footer>
